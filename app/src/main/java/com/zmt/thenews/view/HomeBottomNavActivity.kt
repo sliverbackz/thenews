@@ -41,7 +41,7 @@ class HomeBottomNavActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_item_search) {
-            navController.navigate(R.id.news_search_activity)
+           // navController.navigate(R.id.news_search_activity)
         }
         return true
 //        return item.onNavDestinationSelected(findNavController(R.id.nav_host_main_fragment))
