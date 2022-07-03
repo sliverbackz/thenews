@@ -8,3 +8,4 @@
 - LiveData
 - Dependency Injection(Hilt,Dagger)
 - Image Loader(Glide)
+- Logging(Timber)
