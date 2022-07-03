@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class AuthTokenStoreSecuredImpl @Inject constructor(@ApplicationContext context: Context) :
     AuthTokenStore {
-    private val sharedPreferences =  context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE) //SecuredCache.create(context, AUTH_STORE_FILE_NAME)
+    private val sharedPreferences = SecuredCache.create(context, AUTH_STORE_FILE_NAME)
 
     companion object {
         private const val AUTH_STORE_FILE_NAME = "decrypt_me_XD"
