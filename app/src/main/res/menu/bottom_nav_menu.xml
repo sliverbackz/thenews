@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_top_headlines"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_language_24"
+        android:title="@string/lbl_top_headlines" />
+    <item
+        android:id="@+id/menu_saved_news"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_bookmark_24"
+        android:title="@string/lbl_saved_news" />
+</menu>

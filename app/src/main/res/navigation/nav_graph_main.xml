@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/categorical_news_fragment">
+
+    <fragment
+        android:id="@+id/saved_news_fragment"
+        android:name="com.zmt.thenews.view.fragment.SavedNewsFragment"
+        android:label="fragment_saved_news"
+        tools:layout="@layout/fragment_saved_news" >
+        <action
+            android:id="@+id/action_saved_news_fragment_to_news_detail_activity"
+            app:destination="@id/news_detail_activity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categorical_news_fragment"
+        android:name="com.zmt.thenews.view.fragment.CategoricalNewsFragment"
+        android:label="CategoricalNewsFragment" >
+        <action
+            android:id="@+id/action_categorical_news_fragment_to_news_detail_activity"
+            app:destination="@id/news_detail_activity" />
+    </fragment>
+    <fragment
+        android:id="@+id/top_headlines_fragment"
+        android:name="com.zmt.thenews.view.fragment.TopHeadlinesFragment"
+        android:label="fragment_top_headlines"
+        tools:layout="@layout/fragment_top_headlines" />
+
+    <activity
+        android:id="@+id/news_detail_activity"
+        android:name="com.zmt.thenews.view.NewsDetailActivity"
+        android:label="NewsDetailFragment" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="is_from_saved"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </activity>
+
+</navigation>
