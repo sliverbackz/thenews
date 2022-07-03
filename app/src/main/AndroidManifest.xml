@@ -3,7 +3,7 @@
     package="com.zmt.thenews">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".TheNewsApp"
@@ -25,6 +25,10 @@
         </activity>
         <activity
             android:name=".view.NewsDetailActivity"
+            android:theme="@style/Theme.TheNews.NoActionBar" />
+
+        <activity
+            android:name=".view.NewsSearchActivity"
             android:theme="@style/Theme.TheNews.NoActionBar" />
     </application>
 

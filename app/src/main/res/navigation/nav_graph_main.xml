@@ -41,5 +41,9 @@
             app:argType="boolean"
             android:defaultValue="false" />
     </activity>
+    <activity
+        android:id="@+id/news_search_activity"
+        android:name="com.zmt.thenews.view.NewsSearchActivity"
+        android:label="NewsSearchActivity" />
 
 </navigation>

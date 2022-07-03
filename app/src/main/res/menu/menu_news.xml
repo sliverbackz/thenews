@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_item_search"
-        android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="@string/lbl_menu_saved"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/lbl_search_news"
         android:visible="true"
         app:showAsAction="always" />
 

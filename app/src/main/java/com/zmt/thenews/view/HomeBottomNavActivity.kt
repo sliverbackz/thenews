@@ -1,6 +1,7 @@
 package com.zmt.thenews.view
 
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -33,10 +34,20 @@ class HomeBottomNavActivity : AppCompatActivity() {
         navHostFragment.navController
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return item.onNavDestinationSelected(findNavController(R.id.nav_host_main_fragment))
-                || super.onOptionsItemSelected(item)
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_news, menu)
+        return true
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_item_search) {
+            navController.navigate(R.id.news_search_activity)
+        }
+        return true
+//        return item.onNavDestinationSelected(findNavController(R.id.nav_host_main_fragment))
+//                || super.onOptionsItemSelected(item)
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
