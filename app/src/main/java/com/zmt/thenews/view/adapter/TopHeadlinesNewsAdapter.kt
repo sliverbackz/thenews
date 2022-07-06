@@ -12,11 +12,9 @@ import com.zmt.thenews.databinding.ItemTopHeadlinesNewsBinding
 import com.zmt.thenews.helper.DateUtils.msToTimeAgo
 import com.zmt.thenews.helper.loadFromUrl
 import com.zmt.thenews.model.local.db.news.entity.TopHeadlinesNews
-import java.text.SimpleDateFormat
-import java.time.Instant
-import java.time.format.DateTimeFormatter
-import java.time.temporal.TemporalAccessor
-import java.util.*
+import timber.log.Timber
+import java.time.ZoneId
+import java.time.ZonedDateTime
 
 
 class TopHeadlinesNewsAdapter(private val event: ClickEvent) :
@@ -76,8 +74,12 @@ class TopHeadlinesNewsViewHolder(val view: View, private val event: ClickEvent) 
         currentItem = item
         binding.tvTitle.text = item.title
         binding.ivImage.loadFromUrl(item.urlToImage)
-        binding.tvDate.text = item.publishedAt.split("T")[0]
-        //finalResult.time.msToTimeAgo(itemView.context)//item.publishedAt.getMilliseconds(ISO_DATE).toString()
+        val zonedDateTime = ZonedDateTime.parse(item.publishedAt)
+        val zoneId = ZoneId.systemDefault()
+        val yangonTimeZone = zonedDateTime.withZoneSameInstant(zoneId)
+        val epochMilli = yangonTimeZone.toInstant().toEpochMilli()
+        Timber.i("With Time zone: %s => epochMilli: %d", yangonTimeZone.toString(), epochMilli)
+        binding.tvDate.text = epochMilli.msToTimeAgo(itemView.context)
         updateIsSaved(item.isSaved)
     }
 
