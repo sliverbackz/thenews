@@ -20,6 +20,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -116,5 +117,5 @@ dependencies {
     implementation("androidx.room:room-paging:2.4.2")
     implementation("androidx.paging:paging-runtime-ktx:3.1.1")
 
-    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:1.0.9")
+    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:1.1.6")
 }
